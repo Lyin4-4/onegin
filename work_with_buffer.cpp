@@ -34,7 +34,7 @@ char** from_buffer_to_massive_ptrs(char* buffer, int num_of_strs, int size) {
     //printf("num_of_strs: %d", num_of_strs);
 
     char** massive_ptrs = (char**) calloc(num_of_strs, sizeof(char*));
-    printf("%d", num_of_strs);
+    //printf("%d", num_of_strs);
 
     int counter = 0;
 

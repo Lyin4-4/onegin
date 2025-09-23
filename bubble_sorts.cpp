@@ -1,6 +1,6 @@
 #include "bubble_sorts.h"
 
-void bubble_sort(char** massive_ptrs, int num_strings) {
+void bubble_sort(char** massive_ptrs, int num_strings, int (*comparator)(const char*, const char*)) {
     assert(massive_ptrs);
 
     //printf("zalupa\n");
@@ -11,7 +11,7 @@ void bubble_sort(char** massive_ptrs, int num_strings) {
         flag = 0;
         for (int j = 0; j < num_strings - i - 1; j++) {
             //printf("zalupa\n");
-            if (my_strcmp(massive_ptrs[j], massive_ptrs[j + 1]) > 0) {
+            if ((int)comparator(massive_ptrs[j], massive_ptrs[j + 1]) > 0) {
                 temp = massive_ptrs[j];
                 //fprintf(stderr, "%p", massive_ptrs[j]);
                 massive_ptrs[j] = massive_ptrs[j + 1];

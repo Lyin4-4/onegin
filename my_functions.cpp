@@ -220,31 +220,7 @@ int my_getline(char** str, size_t* n, FILE* file_ptr) {
     return cnt;
 }
 
-/*int strcmp(const char* s1, const char* s2) {
-    int flag = 1;
-    int flag1 = 1;
-    int cnt1 = 0;
-    int cnt2 = 0;
-    while (flag) {
-        if (tolower(s1[cnt1])) {
-            while (flag1) {
-                if (tolower(s2[cnt2])) {
-                    flag1 = 0;
-                    break;
-                }
-                else if (s2[cnt2] == '\0')
-                    break;
-                ++cnt2;
-            }
-            if (flag1 == 0) {
-
-            }
-        }
-            return 0;
-    }
-}*/
-
-int my_strcmp(const char *s0, const char *s1 ){
+int my_strcmp(const char *s0, const char *s1){
 
     while( *s0 != '\0' && *s1 != '\0'){
         if (isalpha(*s0) == 0)

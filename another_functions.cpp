@@ -6,23 +6,16 @@ int count_of_strings(char* buffer, int size) {
     int iter = 0;
     int counter = 0;
 
-
     while (iter < size) {
         if (buffer[iter] == '\n')
             ++counter;
         ++iter;
     }
-    assert(counter);
-    //(*buffer)[size - counter] = '\0';
-    //fprintf(stderr, "rtortrotirtrottiototoiriotr");
-    //*buffer = (char *) realloc(*buffer, size - counter + 1);
-    //fprintf(stderr, "rtortrotirtrottiototoiriotr");
 
     if (counter == 0 && size != 0)
         return 1;
 
     return counter;
-
 }
 
 void swap_ptrs(char** ptr1, char** ptr2) {

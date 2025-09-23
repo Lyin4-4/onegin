@@ -6,6 +6,7 @@ void write_in_file(FILE* write_file, char* buf) {
 
     fprintf(write_file, "%s", buf);
 
+    return ;
 }
 
 void write_in_file_from_massive_ptrs(FILE* write_file, char** massive_ptrs, int num_strings) {
@@ -15,4 +16,6 @@ void write_in_file_from_massive_ptrs(FILE* write_file, char** massive_ptrs, int 
     for (int i = 0; i < num_strings; i++) {
         fprintf(write_file, "%s\n", massive_ptrs[i]);
     }
+
+    return ;
 }
