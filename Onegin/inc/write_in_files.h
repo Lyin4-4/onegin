@@ -6,7 +6,8 @@
 #include <assert.h>
 #include <string.h>
 
-void write_in_file(FILE* write_file, char* buf);
-void write_in_file_from_massive_ptrs(FILE* write_file, char** massive_ptrs, int num_strings);
+void write_in_file(const char* file_name, char* buf, const char* type_onegin);
+void write_in_file_from_massive_ptrs(const char* file_name, char** massive_ptrs,
+                                    int num_strings, const char* type_onegin);
 
 #endif

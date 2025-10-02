@@ -1,7 +1,37 @@
 #include "../inc/work_with_buffer.h"
 
-char* read_in_buffer(FILE* file, size_t *size) {
+size_t get_file_size(const char* file_name) {
+    assert(file_name);
+
+    struct stat buf = {};
+
+    stat(file_name, &buf);
+
+    return buf.st_size;
+}
+
+int count_of_strings(char* buffer, int size) {
+    assert(buffer);
+
+    int iter = 0;
+    int counter = 0;
+
+    while (iter < size) {
+        if (buffer[iter] == '\n')
+            ++counter;
+        ++iter;
+    }
+
+    if (counter == 0 && size != 0)
+        return 1;
+
+    return counter;
+}
+
+char* read_in_buffer(const char* file_name, size_t *size) {
     assert(size);
+
+    FILE* file = fopen(file_name, "r");
     assert(file);
 
     char* buffer = (char*) calloc(*size + 1, sizeof(char));
@@ -19,6 +49,8 @@ char* read_in_buffer(FILE* file, size_t *size) {
     *size = size_read;
 
     buffer = (char*)realloc(buffer, size_read + 1);
+
+    fclose(file);
 
     return buffer;
 }
@@ -73,7 +105,5 @@ void buffer_without_0(char* buffer, int size) {
         //fprintf(stderr, "[%d] %c\n", i, buffer[i]);
         if (buffer[i] == '\0')
             buffer[i] = '\n';
-
     }
-    return ;
 }

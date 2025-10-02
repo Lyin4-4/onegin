@@ -10,5 +10,5 @@
 
 void bubble_sort(char** massive_ptrs, int num_strings, int (*comparator)(const char*, const char*));
 //void bubble_sort_reverse(char** massive_ptrs, int num_strings);
-int comparator(const void* s0, const void* s1);
+//int comparator(const void* s0, const void* s1);
 #endif

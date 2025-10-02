@@ -55,10 +55,10 @@ void bubble_sort(char** massive_ptrs, int num_strings, int (*comparator)(const c
             break;
     }
 }*/
-
+/*
 int comparator(const void* s0, const void* s1) {
     char* str1 = *(char**) s0;
     char* str2 = *(char**) s1;
 
     return my_reverse_strcmp(str1, str2);
-}
+}*/
